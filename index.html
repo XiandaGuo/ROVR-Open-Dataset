@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About MyDataset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .text {
+      flex: 1 1 55%;
+      min-width: 300px;
+    }
+
+    .text p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      list-style-type: none;
+    }
+
+    li::before {
+      content: "●";
+      color: #333;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .image {
+      flex: 1 1 40%;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .image-pair-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .image-pair-row img {
+      width: 48%;
+      max-width: 600px;
+      height: auto;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .full-video-container {
+      width: 80%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      margin: 60px auto;
+      /*margin-top: 60px; !* 可以根据需要加一点间距 *!*/
+    }
+
+    .full-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-image {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .image-pair-row img {
+        width: 100%;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+    .stereo-carousel {
+      width: 80%;
+      /*max-width: 1200px;*/
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .image-pair {
+      display: none;  /* 默认隐藏所有图组 */
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-pair.active {
+      display: flex;  /* 当前显示组 */
+    }
+
+    .image-pair img {
+      max-width: 49%;
+      height: auto;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+
+  </style>
+
+</head>
+<body>
+
+
+  <div class="hero-image">
+    <img src="images/car1.jpg" alt="Banner Image">
+  </div>
+  <!-- 新增主标题 -->
+  <h1 class="main-title">ROVR Open Dataset</h1>
+  <h1 class="main-title">ROVR Open Dataset is a public large-scale dataset for autonomous driving. </h1>
+
+  <!-- 原来的 h1 改成 h2 -->
+  <h2 class="subtitle">About Dataset</h2>
+
+  <div class="container">
+    <div class="text">
+      <p>
+        MyDataset is a large-scale <strong>planning benchmark</strong> for intelligent agents. It features:
+      </p>
+      <ul>
+        <li>The world's first ML planning benchmark</li>
+        <li>1200h of diverse sensor data across multiple cities</li>
+        <li>Multi-modal data (LIDAR, camera, GPS, IMU)</li>
+        <li>Detailed HD map and scene context</li>
+        <li>3D bounding boxes labeled for multiple classes</li>
+        <li>Open/closed loop planning evaluation</li>
+        <li>30+ realistic urban driving scenarios</li>
+        <li>Metrics for evaluating planners (safety, rule violation, dynamics)</li>
+        <li>Reactive + ML planner baselines</li>
+        <li>Free for research use</li>
+        <li>Contact us at mydataset@example.com for commercial use</li>
+      </ul>
+    </div>
+    <div class="image">
+      <img src="images/car2.png" alt="Autonomous Vehicle">
+    </div>
+  </div>
+
+  <h2 class="subtitle">About Sensors</h2>
+  <div class="container">
+    <div class="text">
+      <p>
+        MyDataset is a large-scale <strong>planning benchmark</strong> for intelligent agents. It features:
+      </p>
+      <ul>
+        <li>The world's first ML planning benchmark</li>
+        <li>1200h of diverse sensor data across multiple cities</li>
+        <li>Multi-modal data (LIDAR, camera, GPS, IMU)</li>
+        <li>Detailed HD map and scene context</li>
+        <li>3D bounding boxes labeled for multiple classes</li>
+        <li>Open/closed loop planning evaluation</li>
+        <li>30+ realistic urban driving scenarios</li>
+        <li>Metrics for evaluating planners (safety, rule violation, dynamics)</li>
+        <li>Reactive + ML planner baselines</li>
+        <li>Free for research use</li>
+        <li>Contact us at mydataset@example.com for commercial use</li>
+      </ul>
+    </div>
+    <div class="image">
+      <img src="images/sensor.png" alt="Autonomous Vehicle">
+    </div>
+  </div>
+
+
+
+<!--  <div class="image-pair-row">-->
+<!--    <img src="images/left1.png" alt="Image Pair 1 Left">-->
+<!--    <img src="images/right1.png" alt="Image Pair 1 Right">-->
+<!--  </div>-->
+
+<!--  <div class="image-pair-row">-->
+<!--    <img src="images/left2.png" alt="Image Pair 1 Left">-->
+<!--    <img src="images/right2.png" alt="Image Pair 1 Right">-->
+<!--  </div>-->
+
+  <div class="stereo-carousel">
+  <div class="image-pair active">
+    <img src="images/left1.png" alt="Left 1">
+    <img src="images/right1.png" alt="Right 1">
+  </div>
+  <div class="image-pair">
+    <img src="images/left2.png" alt="Left 2">
+    <img src="images/right2.png" alt="Right 2">
+  </div>
+  <!-- 可以继续添加更多 -->
+  </div>
+
+  <script>
+  let currentIndex = 0;
+  const pairs = document.querySelectorAll('.image-pair');
+  const total = pairs.length;
+
+  function showNextPair() {
+    pairs[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % total;
+    pairs[currentIndex].classList.add('active');
+  }
+
+  setInterval(showNextPair, 3000); // 每3秒切换一组
+  </script>
+
+  <div class="full-video-container">
+  <video class="full-video" autoplay muted loop playsinline>
+    <source src="images/0.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <div class="full-video-container">
+  <video class="full-video" autoplay muted loop playsinline>
+    <source src="images/4.mp4" type="video/mp4">
+  </video>
+  </div>
+
+  <div class="full-video-container">
+  <video class="full-video" autoplay muted loop playsinline>
+    <source src="images/7.mp4" type="video/mp4">
+  </video>
+  </div>
+
+
+</body>
+</html>
