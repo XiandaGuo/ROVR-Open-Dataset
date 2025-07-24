@@ -74,21 +74,21 @@
       height: auto;
     }
 
-    .image-pair-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-      gap: 20px;
-    }
+    /*.image-pair-row {*/
+    /*  display: flex;*/
+    /*  justify-content: center;*/
+    /*  !*flex-wrap: wrap;*!*/
+    /*  margin-bottom: 30px;*/
+    /*  gap: 20px;*/
+    /*}*/
 
-    .image-pair-row img {
-      width: 48%;
-      max-width: 600px;
-      height: auto;
-      border: 1px solid #ccc;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-    }
+    /*.image-pair-row img {*/
+    /*  width: 48%;*/
+    /*  max-width: 600px;*/
+    /*  height: auto;*/
+    /*  border: 1px solid #ccc;*/
+    /*  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);*/
+    /*}*/
 
     .full-video-container {
       width: 80%;
@@ -99,11 +99,37 @@
       /*margin-top: 60px; !* 可以根据需要加一点间距 *!*/
     }
 
+    /*.full-video {*/
+    /*  width: 70%;*/
+    /*  height: auto;*/
+    /*  display: block;*/
+    /*  object-fit: cover;*/
+    /*}*/
+
+    .video-row-container {
+      width: 80%;
+      margin: 60px auto;
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* 控制两个视频之间的间距 */
+      height: 300px;
+      /*flex-wrap: wrap; !* 屏幕小的时候自动换行 *!*/
+    }
+
+    .video-wrapper {
+      flex: 1 1 48%; /* 每个视频宽度约占一半 */
+      max-width: 48%;
+      height: 350px;
+      /*overflow: hidden;*/
+    }
+
     .full-video {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
       object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-image {
@@ -140,7 +166,7 @@
       display: none;  /* 默认隐藏所有图组 */
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap;
+      /*flex-wrap: wrap;*/
     }
 
     .image-pair.active {
@@ -148,7 +174,7 @@
     }
 
     .image-pair img {
-      max-width: 49%;
+      max-width: 48%;
       height: auto;
       border: 1px solid #ccc;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
@@ -164,8 +190,8 @@
     <img src="images/car1.jpg" alt="Banner Image">
   </div>
   <!-- 新增主标题 -->
-  <h1 class="main-title">ROVR Open Dataset</h1>
-  <h1 class="main-title">ROVR Open Dataset is a public large-scale dataset for autonomous driving. </h1>
+  <h1 class="main-title"><strong>ROVR Open Dataset</strong></h1>
+<!--  <h1 class="main-title">ROVR OpenDataset is a large-scale open 3D dataset designed for autonomous driving, robotics, and 4D perception tasks. </h1>-->
 
   <!-- 原来的 h1 改成 h2 -->
   <h2 class="subtitle">About Dataset</h2>
@@ -173,20 +199,17 @@
   <div class="container">
     <div class="text">
       <p>
-        MyDataset is a large-scale <strong>planning benchmark</strong> for intelligent agents. It features:
+        <strong>ROVR OpenDataset</strong> is a large-scale open 3D dataset designed for autonomous driving, robotics, and 4D perception tasks. It features:
       </p>
       <ul>
-        <li>The world's first ML planning benchmark</li>
-        <li>1200h of diverse sensor data across multiple cities</li>
-        <li>Multi-modal data (LIDAR, camera, GPS, IMU)</li>
-        <li>Detailed HD map and scene context</li>
-        <li>3D bounding boxes labeled for multiple classes</li>
-        <li>Open/closed loop planning evaluation</li>
-        <li>30+ realistic urban driving scenarios</li>
-        <li>Metrics for evaluating planners (safety, rule violation, dynamics)</li>
-        <li>Reactive + ML planner baselines</li>
-        <li>Free for research use</li>
-        <li>Contact us at mydataset@example.com for commercial use</li>
+        <li>One of the largest multi-modal datasets combining LiDAR and camera</li>
+        <li>Over <strong>10,000 hours</strong> of high-quality driving data collected across North America, Europe, and Asia</li>
+        <li>Multi-sensor inputs: automotive-grade solid-state LiDAR, HD camera, RTK GNSS, and high-precision IMU</li>
+        <li>Synchronized point cloud and image data for multi-task learning</li>
+        <li>Semantic segmentation and 3D bounding box annotations coming soon</li>
+        <li>Centimeter-level positioning accuracy enabled by GEODNET RTK corrections</li>
+        <li>Free for academic research</li>
+        <li>For commercial licensing, contact us at <strong>support@rovr.network</strong></li>
       </ul>
     </div>
     <div class="image">
@@ -198,20 +221,16 @@
   <div class="container">
     <div class="text">
       <p>
-        MyDataset is a large-scale <strong>planning benchmark</strong> for intelligent agents. It features:
+        <strong>ROVR</strong> uses an automotive-grade sensor suite for reliable data capture under real-world conditions. The setup includes:
       </p>
       <ul>
-        <li>The world's first ML planning benchmark</li>
-        <li>1200h of diverse sensor data across multiple cities</li>
-        <li>Multi-modal data (LIDAR, camera, GPS, IMU)</li>
-        <li>Detailed HD map and scene context</li>
-        <li>3D bounding boxes labeled for multiple classes</li>
-        <li>Open/closed loop planning evaluation</li>
-        <li>30+ realistic urban driving scenarios</li>
-        <li>Metrics for evaluating planners (safety, rule violation, dynamics)</li>
-        <li>Reactive + ML planner baselines</li>
-        <li>Free for research use</li>
-        <li>Contact us at mydataset@example.com for commercial use</li>
+        <li><strong>LiDAR</strong>: 126-beam automotive-grade solid-state LiDAR  </li>
+        <li><strong>Camera</strong>: Automotive-grade HD camera  </li>
+        <li><strong>GNSS</strong>: Triple-frequency RTK receiver with global centimeter-level accuracy  </li>
+        <li><strong>IMU</strong>: Automotive-grade IMU with low bias instability  </li>
+        <li><strong>Processor</strong>: Embedded high-performance edge AI unit with 6 TOPS  </li>
+        <li><strong>Storage</strong>: 1 TB onboard storage  </li>
+        <li><strong>Protection</strong>: IP67 waterproof and dustproof rating</li>
       </ul>
     </div>
     <div class="image">
@@ -257,23 +276,41 @@
   setInterval(showNextPair, 3000); // 每3秒切换一组
   </script>
 
-  <div class="full-video-container">
-  <video class="full-video" autoplay muted loop playsinline>
-    <source src="images/0.mp4" type="video/mp4">
-  </video>
+
+  <div class="video-row-container">
+    <div class="video-wrapper">
+      <video class="full-video" src="images/0.mp4" controls></video>
+    </div>
+    <div class="video-wrapper">
+      <video class="full-video" src="images/4.mp4" controls></video>
+    </div>
   </div>
 
-  <div class="full-video-container">
-  <video class="full-video" autoplay muted loop playsinline>
-    <source src="images/4.mp4" type="video/mp4">
-  </video>
+  <div class="video-row-container">
+    <div class="video-wrapper">
+      <video class="full-video" src="images/1.mp4" controls></video>
+    </div>
+    <div class="video-wrapper">
+      <video class="full-video" src="images/2.mp4" controls></video>
+    </div>
   </div>
+<!--  <div class="full-video-container">-->
+<!--  <video class="full-video" autoplay muted loop playsinline>-->
+<!--    <source src="images/2.mp4" type="video/mp4">-->
+<!--  </video>-->
+<!--  </div>-->
 
-  <div class="full-video-container">
-  <video class="full-video" autoplay muted loop playsinline>
-    <source src="images/7.mp4" type="video/mp4">
-  </video>
-  </div>
+<!--  <div class="full-video-container">-->
+<!--  <video class="full-video" autoplay muted loop playsinline>-->
+<!--    <source src="images/4.mp4" type="video/mp4">-->
+<!--  </video>-->
+<!--  </div>-->
+
+<!--  <div class="full-video-container">-->
+<!--  <video class="full-video" autoplay muted loop playsinline>-->
+<!--    <source src="images/7.mp4" type="video/mp4">-->
+<!--  </video>-->
+<!--  </div>-->
 
 
 </body>
