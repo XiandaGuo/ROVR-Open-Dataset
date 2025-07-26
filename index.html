@@ -27,6 +27,8 @@
       color: #555;
     }
 
+
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -74,37 +76,14 @@
       height: auto;
     }
 
-    /*.image-pair-row {*/
-    /*  display: flex;*/
-    /*  justify-content: center;*/
-    /*  !*flex-wrap: wrap;*!*/
-    /*  margin-bottom: 30px;*/
-    /*  gap: 20px;*/
-    /*}*/
 
-    /*.image-pair-row img {*/
-    /*  width: 48%;*/
-    /*  max-width: 600px;*/
-    /*  height: auto;*/
-    /*  border: 1px solid #ccc;*/
-    /*  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);*/
-    /*}*/
-
-    .full-video-container {
-      width: 80%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      margin: 60px auto;
-      /*margin-top: 60px; !* 可以根据需要加一点间距 *!*/
+    .video-title {
+      text-align: center;
+      font-size: 28px;
+      margin-top: 100px;
+      margin-bottom: 10px;
+      color: #555;
     }
-
-    /*.full-video {*/
-    /*  width: 70%;*/
-    /*  height: auto;*/
-    /*  display: block;*/
-    /*  object-fit: cover;*/
-    /*}*/
 
     .video-row-container {
       width: 80%;
@@ -113,6 +92,7 @@
       justify-content: center;
       gap: 20px; /* 控制两个视频之间的间距 */
       height: 300px;
+      margin-bottom: 100px;  /* 增加底部间距，避免挡住下方内容 */
       /*flex-wrap: wrap; !* 屏幕小的时候自动换行 *!*/
     }
 
@@ -120,6 +100,7 @@
       flex: 1 1 48%; /* 每个视频宽度约占一半 */
       max-width: 48%;
       height: 350px;
+      margin-bottom: 100px;
       /*overflow: hidden;*/
     }
 
@@ -178,6 +159,13 @@
       height: auto;
       border: 1px solid #ccc;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .video-caption {
+      text-align: center;
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 8px;
     }
 
   </style>
@@ -239,78 +227,60 @@
   </div>
 
 
-
-<!--  <div class="image-pair-row">-->
-<!--    <img src="images/left1.png" alt="Image Pair 1 Left">-->
-<!--    <img src="images/right1.png" alt="Image Pair 1 Right">-->
-<!--  </div>-->
-
-<!--  <div class="image-pair-row">-->
-<!--    <img src="images/left2.png" alt="Image Pair 1 Left">-->
-<!--    <img src="images/right2.png" alt="Image Pair 1 Right">-->
-<!--  </div>-->
-
-  <div class="stereo-carousel">
-  <div class="image-pair active">
-    <img src="images/left1.png" alt="Left 1">
-    <img src="images/right1.png" alt="Right 1">
+  <h2 class="video-title">Multiple Scenes</h2>
+  <div class="video-row-container">
+    <div class="video-wrapper">
+      <video class="full-video" src="images/a.mp4" controls></video>
+    </div>
+    <div class="video-wrapper">
+      <video class="full-video" src="images/b.mp4" controls></video>
+    </div>
   </div>
-  <div class="image-pair">
-    <img src="images/left2.png" alt="Left 2">
-    <img src="images/right2.png" alt="Right 2">
-  </div>
-  <!-- 可以继续添加更多 -->
-  </div>
-
-  <script>
-  let currentIndex = 0;
-  const pairs = document.querySelectorAll('.image-pair');
-  const total = pairs.length;
-
-  function showNextPair() {
-    pairs[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % total;
-    pairs[currentIndex].classList.add('active');
-  }
-
-  setInterval(showNextPair, 3000); // 每3秒切换一组
-  </script>
-
 
   <div class="video-row-container">
     <div class="video-wrapper">
+      <video class="full-video" src="images/c.mp4" controls></video>
+    </div>
+    <div class="video-wrapper">
+      <video class="full-video" src="images/d.mp4" controls></video>
+    </div>
+  </div>
+
+  <div class="video-row-container">
+    <div class="video-wrapper">
+      <video class="full-video" src="images/e.mp4" controls></video>
+    </div>
+    <div class="video-wrapper">
+      <video class="full-video" src="images/f.mp4" controls></video>
+    </div>
+  </div>
+
+
+
+  <h2 class="video-title">Multiple Annotations</h2>
+
+  <div class="video-row-container">
+    <div class="video-wrapper">
+      <p class="video-caption">semantic segmentation</p>
       <video class="full-video" src="images/0.mp4" controls></video>
     </div>
     <div class="video-wrapper">
+      <p class="video-caption">bounding box</p>
       <video class="full-video" src="images/4.mp4" controls></video>
     </div>
   </div>
 
   <div class="video-row-container">
     <div class="video-wrapper">
+      <p class="video-caption">depth map</p>
       <video class="full-video" src="images/1.mp4" controls></video>
     </div>
     <div class="video-wrapper">
+      <p class="video-caption">trajectory map</p>
       <video class="full-video" src="images/2.mp4" controls></video>
     </div>
   </div>
-<!--  <div class="full-video-container">-->
-<!--  <video class="full-video" autoplay muted loop playsinline>-->
-<!--    <source src="images/2.mp4" type="video/mp4">-->
-<!--  </video>-->
-<!--  </div>-->
 
-<!--  <div class="full-video-container">-->
-<!--  <video class="full-video" autoplay muted loop playsinline>-->
-<!--    <source src="images/4.mp4" type="video/mp4">-->
-<!--  </video>-->
-<!--  </div>-->
-
-<!--  <div class="full-video-container">-->
-<!--  <video class="full-video" autoplay muted loop playsinline>-->
-<!--    <source src="images/7.mp4" type="video/mp4">-->
-<!--  </video>-->
-<!--  </div>-->
 
 
 </body>
